@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap');
+
+#div-red{
+    /* font-family: monospace; */
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: 2px solid underline red;
+    word-spacing: 12px;
+    letter-spacing: 12px;
+    line-height: 52px;
+}
+
+.color-explain{
+    /* background: radial-gradient(circle at bottom, red, blue, yellow, green, orange); */
+    background: url('../assets/lizard.jfif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.common{
+    font-weight: bold;
+}
+
+/* div{
+    background-color : green;
+    color : white; 
+    font-family: "BBH Bartle", sans-serif;
+}
+
+#div-red{
+    background-color : red;
+}
+
+div{
+    background-color: brown;
+}
+
+.common{
+    background-color: yellow;
+    color : black;
+} */
+
+.div-container{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border : 1px solid blue;
+    /* padding : 10px 20px 30px 40px; */
+    margin : 10px 20px 30px 40px;
+    border-radius: 50%;
+}
