@@ -1,4 +1,5 @@
-import React, { useRef, useState } from 'react'
+import React, { useReducer, useRef, useState } from 'react'
+import Counter from './Counter'
 
 function App() {
   // js -- Design
@@ -13,6 +14,8 @@ function App() {
   let name = "Dennis"
 
   let number = useRef(0)
+
+  console.log(useReducer(10))
 
 
   // console.log(useState(0))
@@ -40,6 +43,7 @@ function App() {
       <h1>App {name}</h1>
       <h2>Value : {value}</h2>
       <h2>Number : {number.current}</h2>
+      <Counter></Counter>
     </div>
   )
 }
