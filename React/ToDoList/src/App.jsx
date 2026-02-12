@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 /* 
@@ -52,11 +52,37 @@ import React, { useState } from 'react'
 
 function App() {
   // to store the task value we are using task variable
-  let [task, setTask] = useState("")
+  const [task, setTask] = useState("")
   // to store the tasks we are using tasks array
   const [tasks, setTasks] = useState([])
 
-  console.log(["something", ...tasks])
+  /* 
+    useEffect : 
+      we tell useEffect what it has to do when a component is rendered/ re-rendered/ a certain value changes.
+
+      syntax : 
+        useEffect(callBackFn, [dependency Array] (optional))
+  */
+
+  // this useEffect will be called whenever the page renders
+  useEffect(() => {
+    console.log(task)
+    console.log("use Effect function called")
+  })
+
+  //this useEffect will be called initially 
+  useEffect(() => {
+    console.log("Use Effect for inital rendering")
+    // asks backend for certain data -- APIs
+  }, []) 
+
+  // this useEffect will only be called when the value inside the dependency array got changed
+  useEffect(() => {
+    console.log("Tasks value changed, hence calling tasks handling useEffect")
+    console.log(tasks)
+  }, [tasks])
+
+  // console.log(["something", ...tasks])
 
   const handleTask = (e) => {
     setTask(e.target.value)
