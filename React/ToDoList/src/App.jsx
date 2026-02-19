@@ -79,7 +79,7 @@ function App() {
   // this useEffect will only be called when the value inside the dependency array got changed
   useEffect(() => {
     console.log("Tasks value changed, hence calling tasks handling useEffect")
-    console.log(tasks)
+    console.log(tasks) 
   }, [tasks])
 
   // console.log(["something", ...tasks])

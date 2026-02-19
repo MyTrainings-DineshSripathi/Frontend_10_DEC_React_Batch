@@ -18,10 +18,10 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <>
-    <h1>Good Morning</h1>
-    <p>I hope your day will be great.</p>
+    {/* <h1>Good Morning</h1> */}
+    {/* <p>I hope your day will be great.</p> */}
     {/* here it replaces <Sample /> with the html code. */}
-    <Component1></Component1>
+    {/* <Component1></Component1> */}
     <App></App>
   </>,
 )
