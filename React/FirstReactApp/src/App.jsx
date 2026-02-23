@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Component1 from './Component1'
 import ProductCard from './ProductCard'
+import Header from './Header'
+import { Link } from 'react-router'
 
 function App() {
 
@@ -23,12 +25,6 @@ function App() {
     const data = await response.json()
     console.log(data.products)
     setProducts(data.products)
-  }
-
-  async function fetchProductDetails(id){
-    const response = await fetch(`https://dummyjson.com/products/${id}`)
-    const data = await response.json()
-    console.log(data)
   }
 
   /* 
@@ -107,9 +103,9 @@ function App() {
                 <button className="modal-btn">
                   Add to Cart
                 </button>
-                <button className="modal-btn">
+                <Link to={`/product/${selectedProduct.id}`} className="modal-btn">
                   view product
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -129,7 +125,7 @@ function App() {
         <h2>Products</h2>
         {/* products container */}
         <section className='products-container'>
-          {products.map((product) => <ProductCard product={product} setSelectedProduct={setSelectedProduct} />)}
+          {(products.length > 0)? products.map((product) => <ProductCard product={product} setSelectedProduct={setSelectedProduct} />) : <p>Loading...</p>}
           {/* 
             {
               name : "dummy",
