@@ -1,0 +1,421 @@
+/* ===== Header ===== */
+
+header {
+  width: 100%;
+  height: 80px;
+  background: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  box-shadow: var(--shadow-soft);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ===== Logo ===== */
+
+.logo-container img {
+  height: 45px;
+  cursor: pointer;
+}
+
+/* ===== Navigation ===== */
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+nav a {
+  text-decoration: none;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  position: relative;
+  transition: color 0.3s ease;
+  text-transform: capitalize;
+}
+
+/* Underline animation */
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== Special Sign In Button ===== */
+
+nav a:last-child {
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
+  background: var(--primary);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+nav a:last-child::after {
+  display: none;
+}
+
+nav a:last-child:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ============================= */
+/* ===== HERO SECTION START ==== */
+/* ============================= */
+
+.hero-section {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  background: var(--bg-main);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== Left Image Area ===== */
+
+.hero-section .image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section .image-container img {
+  width: 90%;
+  max-width: 520px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.4s ease;
+}
+
+.hero-section .image-container img:hover {
+  transform: scale(1.03);
+}
+
+/* ===== Right Description Area ===== */
+
+.hero-section .description {
+  flex: 1;
+  padding-left: 60px;
+}
+
+/* ===== Heading ===== */
+
+.hero-section .description h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+/* Accent color on brand word (optional future use) */
+.hero-section .description h1 span {
+  color: var(--primary);
+}
+
+/* ===== Paragraph ===== */
+
+.hero-section .description p {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-bottom: 35px;
+  max-width: 500px;
+}
+
+/* ===== Button Styling ===== */
+
+.hero-section .shop-now-btn {
+  padding: 14px 32px;
+  border-radius: var(--radius-md);
+  border: none;
+  background: var(--primary);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-section .shop-now-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ===== Optional Soft Background Shape ===== */
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: var(--accent);
+  border-radius: 50%;
+  top: -150px;
+  right: -150px;
+  opacity: 0.08;
+  z-index: 0;
+}
+
+.hero-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ============================= */
+/* ===== PRODUCTS SECTION ====== */
+/* ============================= */
+
+.products-section {
+  width: 100%;
+  padding: 80px 8%;
+  background: var(--bg-surface);
+}
+
+/* ===== Section Heading ===== */
+
+.products-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-align: center;
+  color: var(--text-primary);
+  position: relative;
+}
+
+/* Decorative underline */
+
+.products-section h2::after {
+  content: "";
+  width: 80px;
+  height: 3px;
+  background: var(--primary);
+  display: block;
+  margin: 15px auto 0;
+  border-radius: 10px;
+}
+
+/* ===== Products Grid ===== */
+
+.products-section .products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 35px;
+}
+
+/* ===== Product Card ===== */
+
+.products-section .card {
+  background: var(--bg-main);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.products-section .card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ===== Image Container ===== */
+
+.products-section .card .image-container {
+  position: relative;
+  height: 220px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.products-section .card .image-container img {
+  max-height: 180px;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.products-section .card:hover .image-container img {
+  transform: scale(1.05);
+}
+
+/* ===== Rating Badge ===== */
+
+.products-section .card .rating {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--secondary);
+  color: white;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ===== Product Info ===== */
+
+.products-section .card .product-info {
+  margin-bottom: 20px;
+}
+
+.products-section .card .title {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+
+  /* Limit long titles */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.products-section .card .price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* ===== Add to Cart Button ===== */
+
+.products-section .card button {
+  margin-top: auto;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.products-section .card button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ===== Loading Text ===== */
+
+.products-section p {
+  text-align: center;
+  font-size: 18px;
+  color: var(--text-muted);
+}
+
+
+
+/* ===== Responsive ===== */
+
+@media (max-width: 900px) {
+  nav {
+    gap: 20px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none; /* Later we can replace with hamburger */
+  }
+}
+
+
+/* ============================= */
+/* ===== HERO SECTION RESPONSIVE DESIGN ===== */
+/* ============================= */
+
+@media (max-width: 992px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 6%;
+  }
+
+  .hero-section .description {
+    padding-left: 0;
+    margin-top: 40px;
+  }
+
+  .hero-section .description h1 {
+    font-size: 40px;
+  }
+
+  .hero-section .image-container img {
+    width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-section .description h1 {
+    font-size: 32px;
+  }
+
+  .hero-section .description p {
+    font-size: 16px;
+  }
+
+  .hero-section .shop-now-btn {
+    width: 100%;
+  }
+}
+
+
+/* ============================= */
+/* ===== OUR PRODUCTS SECTION RESPONSIVE DESIGN ===== */
+/* ============================= */
+
+@media (max-width: 768px) {
+  .products-section {
+    padding: 60px 6%;
+  }
+
+  .products-section h2 {
+    font-size: 30px;
+  }
+
+  .products-section .card .image-container {
+    height: 200px;
+  }
+}

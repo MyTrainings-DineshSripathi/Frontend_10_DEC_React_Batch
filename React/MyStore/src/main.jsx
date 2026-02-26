@@ -7,19 +7,9 @@ import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './App.jsx'
-import { BrowserRouter } from 'react-router'
-import RoutesComponent from './MyStoreBlocks/Header/RoutesComponent.jsx'
-import Header from './MyStoreBlocks/Header/Header.jsx'
-import Footer from './MyStoreBlocks/Footer/Footer.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <Header></Header>
-      <main>
-        <RoutesComponent></RoutesComponent>
-      </main>
-      <Footer></Footer>
-    </BrowserRouter>
+    <App />
   </StrictMode>,
 )
