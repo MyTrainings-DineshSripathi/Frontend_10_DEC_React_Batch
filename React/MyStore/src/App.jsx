@@ -1,40 +1,35 @@
 import './App.css'
-import Logo from '/logo.png'
 import Shop from './assets/shop.jpg'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import Header from './UIBlocks/Header/Header'
+import { useSelector } from 'react-redux'
+import { setProducts } from './data/dataSlices/ProductsSlice'
+import { useDispatch } from 'react-redux'
+import { fetchProducts } from './data/dataSlices/ProductsAsyncThunk'
 
 function App() {
 
-  const [products, setProducts] = useState([])
+  const {products} = useSelector(state => state.products)
+  const dispatch = useDispatch()
 
-  const fetchProducts = async () => {
+  // const fetchProducts = async () => {
     // https://dummyjson.com/products
     // also add category as a badge in-place of rating
-    const response = await axios.get('https://fakestoreapi.com/products')
-    setProducts(response.data)
-  }
+    // dispatch(fetchProducts())
+    // dispatch(setProducts(response.data))
+  // }
 
   // [] -- dependency array, if empty, the effect will run only once after the initial render
   // if we have some state variables that we want to watch for changes, we can add them to the dependency array, and the effect will run whenever those variables change
+  
   useEffect(() =>{
-    fetchProducts()
+    dispatch(fetchProducts())
+    // fetchProducts()
   }, [])
   
   return (
     <>
-      <header>
-        <div className="logo-container">
-          <img src={Logo} alt="MyStore logo" />
-        </div>
-        <nav>
-          <a href="">home</a>
-          <a href="">products</a>
-          <a href="">about us</a>
-          <a href="">contact</a>
-          <a href="">sign in</a>
-        </nav>
-      </header>
       <main>
         <section className='hero-section'>
           <div className="image-container">
@@ -65,7 +60,6 @@ function App() {
           </div>
         </section>
       </main>
-      <footer></footer>
     </>
   )
 }
